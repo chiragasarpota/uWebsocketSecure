@@ -32,7 +32,7 @@ async function init() {
 
   await openUserMedia();
 
-  let ws = new WebSocket("ws://localhost:9001");
+  let ws = new WebSocket("wss://ws.alloapp.io:9001");
   ws.binaryType = "arraybuffer";
 
   ws.onmessage = async (message) => {
