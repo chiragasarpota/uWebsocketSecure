@@ -4,9 +4,11 @@ const uWS = require("uWebSockets.js");
 const port = 9001;
 
 const app = uWS
-  ./*SSL*/ App()
+  .SSLApp()
   .ws("/*", {
     /* Options */
+    key_file_name: '/etc/letsencrypt/live/ws.alloapp.io/privkey.pem',
+    cert_file_name: '/etc/letsencrypt/live/ws.alloapp.io/fullchain.pem',
     compression: uWS.SHARED_COMPRESSOR,
     maxPayloadLength: 16 * 1024 * 1024,
     idleTimeout: 60,
